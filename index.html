@@ -1,0 +1,451 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+	  <title>Universidade</title>
+	  <meta charset="UTF-8"/>
+	  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  	  <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <body>
+  	  <div id="page" class="u-page">
+  	  	<nav id="nav">
+  	  		<div class="u-nav-top"></div>
+  	  		<div class="u-nav-ul">
+  	  			<ul>
+  	  				<li class="u-nav-li" h="estudante" id="aluno"><div>Estudantes</div></li>
+  	  				<li class="u-nav-li" h="professor"><div>Professores</div></li>
+  	  				<li class="u-nav-li" h="curso"><div>Cursos</div></li>
+  	  				<li class="u-nav-li" h="turma"><div>Turmas</div></li>
+					<li class="u-nav-li" h="projeto"><div>Projeto</div></li>
+					<li class="u-nav-li" h="departamento"><div>Departamento</div></li>
+  	  			</ul>
+  	  		</div>
+  	  		<div class="u-nav-end"></div>
+  	  	</nav>
+  	  	<content id="content">
+			<div id='estudante' class="u-content-page u-content-act">
+				<div class="u-title-page">estudante <button class="u-top-btn" h='estudante'><i class='bx bx-plus'></i></button></div>
+				<div class="u-dados"></div>
+			</div>
+			<div id='professor' class="u-content-page">
+				<div class="u-title-page">professor <button class="u-top-btn" h='professor'><i class='bx bx-plus'></i></button></div>
+				<div class="u-dados"></div>
+			</div>
+			<div id='curso' class="u-content-page">
+				<div class="u-title-page">curso <button class="u-top-btn" h='curso'><i class='bx bx-plus'></i></button></div>
+				<div class="u-dados"></div>
+			</div>
+			<div id='turma' class="u-content-page">
+				<div class="u-title-page">turma <button class="u-top-btn" h='turma'><i class='bx bx-plus'></i></button></div>
+				<div class="u-dados"></div>
+			</div>
+			<div id='projeto' class="u-content-page">
+				<div class="u-title-page">projeto <button class="u-top-btn" h='projeto'><i class='bx bx-plus'></i></button></div>
+				<div class="u-dados"></div>
+			</div>
+			<div id='departamento' class="u-content-page">
+				<div class="u-title-page">departamento <button class="u-top-btn" h='departamento'><i class='bx bx-plus'></i></button></div>
+				<div class="u-dados"></div>
+			</div>
+		</content>
+  	  </div>
+	  <!--POPUP DE ATUALIZAR-->
+	  <!--POPUP CURSO-->
+	  <div id='cursoPop' class='u-popup'>
+		<div class="u-popup-main">
+			<div class="u-popup-top">Atualizar Curso <i class='u-closed-pop bx bx-x'></i></div>
+			<div class="u-popup-body">
+				<input id='idcurso' type="hidden"> <!-- ARMAZENA O ID -->
+				<div class="u-input">
+					<label>Nome:</label>
+					<input id='nomecurso' type="text" placeholder="Nome"> <!-- ARMAZENA O NOME -->
+				</div>
+			</div>
+			<div class="u-popup-footer">
+				<button class="u-popup-att u-popup-btn">Atualizar</button>
+			</div>
+		</div>
+	  </div>
+
+	  <!--POPUP TURMA-->
+	  <div id='turmaPop' class='u-popup'>
+		<div class="u-popup-main">
+			<div class="u-popup-top">Turma <i class='u-closed-pop bx bx-x'></i></div>
+			<div class="u-popup-body">
+				<input id='idturma' type="hidden"> <!-- ARMAZENA O ID -->
+				<div class="u-input">
+					<label>Ano:</label>
+					<input id='anoturma' type="text" placeholder="Ano" disabled=""> <!-- ARMAZENA O ANO -->
+				</div>
+				<div class="u-select">
+					<label>Semestre:</label>
+					<select id="semestreturma" disabled="">
+						<option value="">Selecionar...</option>
+						<option value="1">1º Semestre</option>
+						<option value="2">2º Semestre</option>
+					</select>
+				</div>
+			</div>
+			<div class="u-popup-footer" style="display: none;">
+			</div>
+		</div>
+	  </div>
+
+	   <!--POPUP Departamento-->
+	   <div id='departamentoPop' class='u-popup'>
+		<div class="u-popup-main">
+			<div class="u-popup-top">Atualizar Departamento <i class='u-closed-pop bx bx-x'></i></div>
+			<div class="u-popup-body">
+				<div class="u-tab-menu-d">
+					<div class="u-tab-d u-tab-act">Info</div>					
+					<div class="u-tab-d">Professores</div>
+				</div>
+				<div class="u-pop-tab-d u-popup-tab-act">
+					<input id='iddepartamento' type="hidden"> <!-- ARMAZENA O ID -->
+					<div class="u-input">
+						<label>Nome:</label>
+						<input id='nomedepartamento' type="text" placeholder="Nome"> <!-- ARMAZENA O Nome -->
+					</div>
+					<div class="u-input">
+						<label>Escritorio:</label>
+						<input id='escritoriodepartamento' type="text" placeholder="Escritorio"> <!-- ARMAZENA O Escritorio -->
+					</div>
+				</div>
+				<div id='deparProf' class="u-pop-tab-d">
+					<div class="u-form-tab-d">
+						<div class="u-select">
+							<label>Professores:</label>
+							<select id="selDep444arProf"></select>
+						</div>
+					</div>
+					<div class="u-dados"></div>
+				</div>
+			</div>
+			<div class="u-popup-footer">
+				<div class="u-tab-btn-d">
+					<button class="u-popup-att u-popup-btn">Atualizar</button>
+				</div>
+				<div class="u-tab-btn-d" style="display: none;">
+					<button id="DepartamentoProf" class="u-popup-btn">Cadastrar</button>
+				</div>
+			</div>
+		</div>
+	  </div>
+	  
+	  <!--POPUP ESTUDANTE-->
+	  <div id='estudantePop' class='u-popup'>
+		<div class="u-popup-main">
+			<div class="u-popup-top">Atualizar Estudantes <i class='u-closed-pop bx bx-x'></i></div>
+			<div class="u-popup-body">
+				<input id='idestudante' type="hidden"> <!-- ARMAZENA O ID -->
+				<div class="u-input">
+					<label>Nome:</label>
+					<input id='nomeestudante' type="text" placeholder="Nome"> <!-- ARMAZENA O NOME -->
+				</div>
+				<div class="u-input">
+					<label>Idade:</label>
+					<input id='idadeestudante' type="text" placeholder="Idade"> <!-- ARMAZENA a IDADE -->
+				</div>
+				<div class="u-input">
+					<label>Aconselhador:</label>
+					<input id='aconselhadorestudante' type="text" placeholder="Aconselhador"> <!-- ARMAZENA a Aconselhador -->
+				</div>
+				<div class="u-input">
+					<label>Turma:</label>
+					<input id='turmaestudante' type="text" placeholder="Turma"> <!-- ARMAZENA a cd_turma -->
+				</div>
+			</div>
+			<div class="u-popup-footer">
+				<button class="u-popup-att u-popup-btn">Atualizar</button>
+			</div>
+		</div>
+	  </div>
+
+	  <!--POPUP PROFESSOR-->
+	  <div id='professorPop' class='u-popup'>
+		<div class="u-popup-main">
+			<div class="u-popup-top">Atualizar Professor <i class='u-closed-pop bx bx-x'></i></div>
+			<div class="u-popup-body">
+				<input id='idprofessor' type="hidden"> <!-- ARMAZENA O ID -->
+				<div class="u-input">
+					<label>Nome:</label>
+					<input id='nomeprofessor' type="text" placeholder="Nome"> <!-- ARMAZENA O NOME -->
+				</div>
+				<div class="u-input">
+					<label>Idade:</label>
+					<input id='idadeprofessor' type="text" placeholder="Idade"> <!-- ARMAZENA O idade -->
+				</div>
+				<div class="u-input">
+					<label>Sala:</label>
+					<input id='salaprofessor' type="text" placeholder="Sala"> <!-- ARMAZENA O sala -->
+				</div>
+				<div class="u-input">
+					<label>Especialidade:</label>
+					<input id='especialidadeprofessor' type="text" placeholder="Especialidade"> <!-- ARMAZENA O Especialidade -->
+				</div>
+			</div>
+			<div class="u-popup-footer">
+				<button class="u-popup-att u-popup-btn">Atualizar</button>
+			</div>
+		</div>
+	  </div>
+
+	  <!--POPUP projeto-->
+	  <div id='projetoPop' class='u-popup'>
+		<div class="u-popup-main">
+			<div class="u-popup-top">Atualizar Projetos <i class='u-closed-pop bx bx-x'></i></div>
+			<div class="u-popup-body">
+				<div class="u-popup-menu">
+					<div class="u-tab u-tab-act">Info</div>
+					<div class="u-tab">Estudantes</div>
+					<div class="u-tab">Professores</div>
+				</div>
+				<div class="u-popup-tab u-popup-tab-act">
+					<input id='idprojeto' type="hidden"> <!-- ARMAZENA O ID -->
+					<div class="u-input">
+						<label>Nome:</label>
+						<input disabled="" id='nomeprojeto' type="text" placeholder="Nome"> <!-- ARMAZENA O NOME -->
+					</div>
+					<div class="u-input">
+						<label>Orgao:</label>
+						<input disabled="" id='orgaoprojeto' type="text" placeholder="Orgao"> <!-- ARMAZENA a Orgao -->
+					</div>
+					<div class="u-input">
+						<label>Inicio:</label>
+						<input disabled="" id='inicioprojeto' type="text" placeholder="Inicio"> <!-- ARMAZENA a Inicio -->
+					</div>
+					<div class="u-input">
+						<label>Fim:</label>
+						<input disabled="" id='fimprojeto' type="text" placeholder="Fim"> <!-- ARMAZENA a Fim -->
+					</div>
+					<div class="u-input">
+						<label>Orçamento:</label>
+						<input disabled="" id='orcamentoprojeto' type="text" placeholder="orçamento"> <!-- ARMAZENA a orcamento -->
+					</div>
+					<div class="u-input">
+						<label>pesquisador:</label>
+						<input disabled="" id='pesquisadorprojeto' type="text" placeholder="Pesquisador"> <!-- ARMAZENA a pesquisador -->
+					</div>
+				</div>
+				<div id="EstProj" class="u-popup-tab">
+					<div class="u-tab-form">
+						<div id="selEstProj" class="u-select">
+							<label>Estudante:</label>
+							<select ></select>
+						</div>
+						<div class="u-select">
+							<label>Orientador:</label>
+							<select id="selOriProj"></select>
+						</div>
+					</div>
+					<div class="u-dados"></div>
+				</div>
+				<div id='ProfProj' class="u-popup-tab">
+					<div class="u-tab-form">
+						<div class="u-select">
+							<label>Professor:</label>
+							<select id="selProfProj"></select>
+						</div>
+					</div>
+					<div class="u-dados"></div>
+				</div>
+			</div>
+			<div class="u-popup-footer">
+				<div class="u-tab-btn">
+					<button class="u-popup-att u-popup-btn" style="display: none;">Atualizar</button>
+				</div>
+				<div class="u-tab-btn" style="display: none;">
+					<button id="EstudanteProj" class="u-popup-btn">Cadastrar</button>
+				</div>				
+				<div class="u-tab-btn" style="display: none;">
+					<button id="ProfessorProj" class="u-popup-btn">Cadastrar</button>
+				</div>				
+			</div>
+		</div>
+	  </div>
+
+
+	  <!-- POPUP DE INSERIR -->
+	  <!--POPUP CURSO-->
+	  <div id='cursoPopInsert' class='u-popup'>
+		<div class="u-popup-main">
+			<div class="u-popup-top">Cadastrar Curso <i class='u-closed-pop bx bx-x'></i></div>
+			<div class="u-popup-body">
+				<input id='idcursoInsert' type="hidden"> <!-- ARMAZENA O ID -->
+				<div class="u-input">
+					<label>Nome:</label>
+					<input id='nomecursoInsert' type="text" placeholder="Nome"> <!-- ARMAZENA O NOME -->
+				</div>
+				<div class="u-select">
+					<label>Departamento:</label>
+					<select id="departamentoAll"></select>
+				</div>
+			</div>
+			
+			<div class="u-popup-footer">
+				<button class="u-popup-insert u-popup-btn">Cadastrar</button>
+			</div>
+		</div>
+	  </div>
+
+	  <!--POPUP TURMA-->
+	  <div id='turmaPopInsert' class='u-popup'>
+		<div class="u-popup-main">
+			<div class="u-popup-top">Turma <i class='u-closed-pop bx bx-x'></i></div>
+			<div class="u-popup-body">
+				<input type="hidden"> <!-- ARMAZENA O ID -->
+				<div class="u-input">
+					<label>Ano:</label>
+					<input type="text" placeholder="Ano"> <!-- ARMAZENA O ANO -->
+				</div>
+				<div class="u-select">
+					<label>Semestre:</label>
+					<select>
+						<option value="">Selecionar...</option>
+						<option value="1">1º Semestre</option>
+						<option value="2">2º Semestre</option>
+					</select>
+				</div>
+			</div>
+			<div class="u-popup-footer">
+				<button class="u-popup-insert u-popup-btn">Cadastrar</button>
+			</div>
+		</div>
+	  </div>
+
+	<!--POPUP Departamento-->
+	<div id='departamentoPopInsert' class='u-popup'>
+		<div class="u-popup-main">
+			<div class="u-popup-top">Cadastrar Departamento <i class='u-closed-pop bx bx-x'></i></div>
+			<div class="u-popup-body">
+				<input type="hidden"> <!-- ARMAZENA O ID -->
+				<div class="u-input">
+					<label>Nome:</label>
+					<input  type="text" placeholder="Nome"> <!-- ARMAZENA O Nome -->
+				</div>
+				<div class="u-input">
+					<label>Escritorio:</label>
+					<input type="text" placeholder="Escritorio"> <!-- ARMAZENA O Escritorio -->
+				</div>
+			</div>
+			<div class="u-popup-footer">
+				<button class="u-popup-insert u-popup-btn">Cadastrar</button>
+			</div>
+		</div>
+	</div>
+	
+	  <!--POPUP ESTUDANTE-->
+	  <div id='estudantePopInsert' class='u-popup'>
+		<div class="u-popup-main">
+			<div class="u-popup-top">Cadastrar Estudantes <i class='u-closed-pop bx bx-x'></i></div>
+			<div class="u-popup-body">				
+				<div class="u-form-2">
+					<div class="u-input">
+						<label>Nome:</label>
+						<input type="text" placeholder="Nome"> <!-- ARMAZENA O NOME -->
+					</div>
+					<div class="u-input">
+						<label>Idade:</label>
+						<input type="text" placeholder="Idade"> <!-- ARMAZENA a IDADE -->
+					</div>
+				</div>
+				<div id='turmaAll' class="u-select">
+					<label>Turma:</label>
+					<select></select>
+				</div>
+				<div id="aconselhaAll" class="u-select" style="display: none;">
+					<label>Aconselhador:</label>
+					<select></select>
+				</div>				
+			</div>
+			<div class="u-popup-footer">
+				<button class="u-popup-insert u-popup-btn">Cadastrar</button>
+			</div>
+		</div>
+	  </div>
+
+	  <!--POPUP PROFESSOR-->
+	  <div id='professorPopInsert' class='u-popup'>
+		<div class="u-popup-main">
+			<div class="u-popup-top">Cadastrar Professor <i class='u-closed-pop bx bx-x'></i></div>
+			<div class="u-popup-body">
+				<div class="u-form-2">
+					<div class="u-input">
+						<label>Nome:</label>
+						<input type="text" placeholder="Nome"> <!-- ARMAZENA O NOME -->
+					</div>
+					<div class="u-input">
+						<label>Idade:</label>
+						<input type="text" placeholder="Idade"> <!-- ARMAZENA O idade -->
+					</div>
+					
+					<div class="u-input">
+						<label>Sala:</label>
+						<input type="text" placeholder="Sala"> <!-- ARMAZENA O sala -->
+					</div>
+					<div class="u-input">
+						<label>Especialidade:</label>
+						<input type="text" placeholder="Especialidade"> <!-- ARMAZENA O Especialidade -->
+					</div>
+				</div>
+			</div>
+			<div class="u-popup-footer">
+				<button class="u-popup-insert u-popup-btn">Cadastrar</button>
+			</div>
+		</div>
+	  </div>
+
+	  <!--POPUP projeto-->
+	  <div id='projetoPopInsert' class='u-popup'>
+		<div class="u-popup-main">
+			<div class="u-popup-top">Cadastrar Projetos <i class='u-closed-pop bx bx-x'></i></div>
+			<div class="u-popup-body">				
+					<div class="u-form-2">
+						<div class="u-input">
+							<label>Nome:</label>
+							<input type="text" placeholder="Nome"> <!-- ARMAZENA O NOME -->
+						</div>
+						<div class="u-input">
+							<label>Orgao:</label>
+							<input type="text" placeholder="Orgao"> <!-- ARMAZENA a Orgao -->
+						</div>
+						<div class="u-input">
+							<label>Inicio do Projeto:</label>
+							<input id="cadDataI" type="text" placeholder="Inicio"> <!-- ARMAZENA a Inicio -->
+						</div>
+						<div class="u-input">
+							<label>Fim do Projeto:</label>
+							<input id="cadDataF" type="text" placeholder="Fim"> <!-- ARMAZENA a Fim -->
+						</div>
+					</div>
+					<div class="u-input">
+						<label>Orçamento:</label>
+						<input type="text" placeholder="orçamento"> <!-- ARMAZENA a orcamento -->
+					</div>
+					<div class="u-select">
+						<label>pesquisador:</label>
+						<select id="pesquisadorAll"></select>
+					</div>
+			</div>
+			<div class="u-popup-footer">
+				<button class="u-popup-insert u-popup-btn">Cadastrar</button>
+			</div>
+		</div>
+	  </div>
+
+
+	  <!-- BIBLIOTECAS -->	  
+	  <script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+	  <script type="text/javascript" src="jquery-mask.js"></script>
+ 	  <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+	  <!-- CAMADA DADOS -->
+	  <script type="text/javascript" src="dados/estudante.js"></script>
+	  <script type="text/javascript" src="dados/professor.js"></script>
+	  <script type="text/javascript" src="dados/turma.js"></script>
+	  <script type="text/javascript" src="dados/curso.js"></script>
+	  <script type="text/javascript" src="dados/departamento.js"></script>
+	  <script type="text/javascript" src="dados/projeto.js"></script>	  
+	  <!-- CAMADA NEGOCIO -->
+	  <script type="text/javascript" src="negocio/sistema.js"></script>
+  </body>
+  </html>

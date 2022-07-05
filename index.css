@@ -1,0 +1,250 @@
+*{padding: 0;margin: 0;position: relative; font-family: Arial, Helvetica, sans-serif;}
+
+i{
+	font-weight: normal;
+	font-style: normal;
+	font-family: boxicons !important;
+}
+
+body{width: 100vw;height: 100vh;overflow: hidden; background: #212121}
+body {
+  font-family: 'lato', sans-serif;
+}
+
+ul {list-style: none;}
+
+
+.u-page{
+	width: 100vw;height: 100vh;overflow: hidden;background: transparent;
+	display: grid;
+	grid-template-columns: 225px calc(100vw - 225px);
+}
+
+#content {
+	margin: 15px;
+	background: white;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.u-nav-ul {
+	padding: 10px 0 10px 10px;
+}
+
+.u-nav-li {
+	color: white;
+	font-size: 18px;
+	font-weight: 600;
+	text-transform: uppercase;
+	cursor: pointer;
+	padding: 10px 10px 10px 30px;
+}
+
+.u-nav-li:hover {
+	background: #525252;
+}
+
+
+.u-content-page {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	display: none;
+}
+
+.u-content-page.u-content-act{
+	display: block;
+}
+
+.u-table {
+	padding: 10px;
+	margin: 10px;
+}
+
+.u-table-line {
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+	padding: 20px;
+	box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+	border-radius: 10px;
+	margin-top: 15px;
+	user-select:none;
+}
+
+.u-table-head .u-table-line {
+	background: #373737;
+	color: white;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.u-table-body .u-table-line:hover {
+	background: #eee;
+	cursor: pointer;
+}
+
+/* POPUPs*/
+
+.u-popup {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 2;
+	top: 0;
+	background: #0006;
+	left: 0;
+	display: none;
+}
+
+.u-popup-act{
+	display: block;
+}
+
+.u-closed-pop {
+	position: absolute;
+	right: 0;
+	padding: 6px;
+	font-size: 30px;
+	top: 0;
+}
+
+.u-closed-pop.bx.bx-x:hover {
+	color: red;
+	cursor: pointer;
+}
+
+.u-popup-main {
+	width: 600px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: white;
+}
+
+.u-popup-top {
+	text-transform: uppercase;
+	font-weight: 600;
+	padding: 10px 55px 10px 10px;
+	font-size: 20px;
+	background: #212121;
+	color: white;
+}
+
+.u-popup-body {
+	padding: 20px;
+}
+
+.u-popup-footer {
+	padding: 15px;
+	border-top: 1px solid #eee;
+}
+
+.u-input, .u-select {
+	padding: 10px;
+	overflow: hidden;
+}
+
+.u-input input[type="text"] {
+	width: calc(100% - 30px);
+	padding: 10px 10px 10px 20px;
+	font-size: 18px;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 3px black;
+}
+
+.u-input label, .u-select label  {
+	display: block;
+	padding-bottom: 5px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: gray;
+	font-size: 14px;
+}
+
+
+.u-popup-btn {
+	display: block;
+	padding: 13px 20px;
+	border: none;
+	box-shadow: 0 0 3px gray;
+	font-size: 17px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: gray;
+	cursor: pointer;
+	background: white;
+	border-radius: 10px;
+	user-select: none;
+}
+
+.u-title-page {
+    padding: 10px;
+    margin: 25px;
+    font-size: 40px;
+    text-transform: capitalize;
+    box-shadow: 0 0 6px gray;
+}
+
+button.u-top-btn i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button.u-top-btn {
+    font-size: 35px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 5px grey;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    border: none;
+    cursor: pointer;
+}
+
+.u-select select {
+	width: 100%;
+	padding: 10px 10px 10px 20px;
+	font-size: 18px;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 3px black;
+}
+
+.u-form-2 {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+.u-popup-menu {
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+}
+.u-tab-menu-d{
+	display: grid;
+	grid-template-columns:50% 50%;
+}
+
+.u-tab, .u-tab-d {
+	padding: 10px;
+	font-size: 21px;
+	border: 1px solid gray;
+	cursor: pointer;
+	user-select: none;
+}
+
+.u-tab.u-tab-act , .u-tab-d.u-tab-act{
+	background: #565656;
+	color: white;
+}
+
+.u-popup-tab, .u-pop-tab-d {
+	display: none;
+}
+
+.u-popup-tab.u-popup-tab-act, .u-pop-tab-d.u-popup-tab-act{
+	display: block;
+}
